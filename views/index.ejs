@@ -1,0 +1,26 @@
+<%- include("partials/head.ejs") %>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <div class="cover-photo">
+        <div class="cover-text">
+            <h1>Welcome to ExPoster</h1>
+            <p class="lead">Feel Free to Share what's on your mind...</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="blog-posts">
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <p class="title"><%= post.name %></p>
+                    <span class="author">- by <b><%= post.author %></b></span>
+                    <div class="text">
+                        <p><%= post.truncatedPost %></p>
+                    </div>
+                    <p><%= post.date() %></p>
+                    <a class="read-post" href="/post/<%= post.name %>">Read More</a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

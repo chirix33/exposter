@@ -1,0 +1,63 @@
+<%- include("partials/head.ejs") %>
+<body>
+    <%- include("partials/nav.ejs") %>
+    <div class="form-page-cover">
+        <div class="cover-text">
+            <h1>New Post, New information</h1>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Go Ahead...</h3>
+        <br />
+        <div class="form-wrapper">
+            <form action="/publishpost" method="post">
+                <div class="input-group">
+                    <input type="text" name="author" required>
+                    <span class="label">Your Name (Lol)</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="title" required>
+                    <span class="label">Post Title</span>
+                </div>
+                <div class="textarea-group">
+                    <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+                    <span class="label">Write Up</span>
+                </div>
+                <button type="submit" class="submit">Submit Post</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("input").on("focus", function(e) {
+                let nextSpan = $(this).next(".label");
+                $(nextSpan).addClass("input-active");
+            });
+
+            $("input").on("focusout", function(e) {
+                let nextSpan = $(this).next(".label");
+                if ( $(this).val() !== "" ) {
+                    $(nextSpan).addClass("input-active");
+                } else {
+                    $(nextSpan).removeClass("input-active");
+                }
+            });
+
+            
+            $("textarea").on("focus", function(e) {
+                let nextSpan = $(this).next(".label");
+                $(nextSpan).addClass("textarea-active");
+            });
+
+            $("textarea").on("focusout", function(e) {
+                let nextSpan = $(this).next(".label");
+                if ( $(this).val() !== "" ) {
+                    $(nextSpan).addClass("textarea-active");
+                } else {
+                    $(nextSpan).removeClass("textarea-active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

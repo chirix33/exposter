@@ -1,0 +1,248 @@
+body {
+    box-sizing: border-box;
+    padding: 0;  
+    margin: 0; 
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.lead {
+    font-size: 14px; 
+}
+
+div.header-bar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E4E2DD;
+}
+
+.action-link {
+    margin-left: auto;
+    margin-right: 5px;
+    color: #E84545;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px;
+    border: 3px solid #E84545;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.header-bar img {
+    width: 100px;
+    height: 100px;
+}
+
+div.cover-photo {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../media/cover-photo.png');
+    background-size: cover;
+}
+
+div.cover-text {
+    color: white;
+    width: 70%;
+    height: 50%;
+    border: 3px solid white;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    width: 70%;
+    margin: 100px auto;
+}
+
+/* Blog Styles */
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 300px;
+    gap: 30px;
+}
+
+.blog-posts > div.post {
+    max-height: 300px;
+    position: relative;
+}
+
+.post > .title,
+.article > .title {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2em;
+    line-height: 20px;
+    color: #2B2E4A;
+}
+
+.post .author {
+    font-size: 13px;
+    font-family: 'Red Hat Display', sans-serif;
+    line-height: 19px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #903749;
+}
+
+.post > div.text {
+    min-height: 100px;
+    max-height: 100px;
+    margin-bottom: 15px;
+}
+
+.read-post,
+.back-home {
+    text-decoration: none;
+    padding-bottom: 3px;
+    color: #53354A;
+    border-bottom: 3px solid #2B2E4A;
+}
+
+/* End Blog Styles */
+
+/* Aritcle Styles */
+.article > .article-text {
+    margin-top: 50px;
+    line-height: 28px;
+}
+
+.back-home {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+/* End Article Styles */
+
+/* Form Page Styles */
+
+.form-page-cover {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../media/cover-photo-2.png');
+    background-size: cover;
+}
+
+.form-page-cover > div.cover-text {
+    color: black;
+    border-color: black;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 100px;
+}
+
+.input-group,
+.textarea-group {
+    /* font-weight: bold; */
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    height: 40px;
+}
+
+.input-group > input {
+    position: relative;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #970a0a;
+    line-height: 25px;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    z-index: 5;
+}
+
+.input-group > .label.input-active {
+    top: -10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2B2E4A;
+}
+
+
+.input-group > .label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .2s;
+}
+
+.textarea-group {
+    position: relative;
+}
+
+.textarea-group > textarea {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #970a0a;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    z-index: 5;
+}
+
+.textarea-group > .label.textarea-active {
+    top: -18px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2B2E4A;
+}
+
+.textarea-group > .label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: .2s;
+}
+
+.submit {
+    background-color: #2B2E4A;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 15px 30px;
+}
+
+/* End Form Page Styles */
+@media (max-width: 1160px) {
+    .blog-posts {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    .blog-posts > div.post {
+        max-height: max-content;
+    }
+
+    .post > div.text {
+        max-height: max-content;
+    }
+}
